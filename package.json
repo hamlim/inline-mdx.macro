@@ -3,13 +3,18 @@
   "version": "1.0.0",
   "main": "inline-mdx.macro.js",
   "keywords": [
-    "babel-plugin-macros"
+    "babel-plugin-macros",
+    "mdx"
   ],
+  "description": "A babel-macro for transforming mdx inline.",
   "author": "Matthew Hamlin <hamlim@outlook.com> (https://matthamlin.me/)",
   "license": "MIT",
   "dependencies": {
     "babel-plugin-macros": "^2.0.0",
     "babel-plugin-syntax-jsx": "6.18.0"
+  },
+  "repository": {
+    "url": "https://github.com/hamlim/inline-mdx.macro"
   },
   "devDependencies": {
     "@babel/core": "7.0.0-beta.54",
