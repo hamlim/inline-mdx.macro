@@ -1,5 +1,4 @@
-import {inline} from 'inline-mdx.macro'
-import { MDXTag } from '@mdx-js/tag'
+import { inline } from 'inline-mdx.macro'
 
 const SomeMDXComponent = inline`
 

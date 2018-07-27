@@ -6,11 +6,24 @@ module.exports = createMacro(inlineMDX)
 
 function inlineMDX({ references, babel, state }) {
   const { types: t } = babel
-  const { inline = [] } = references
+  const { inline = [], imports = [] } = references
+  let mdxImports = []
   inline.forEach(reference => {
     const funcName = reference.parentPath.parent.id.name
     let rawCode = reference.parent.quasi.quasis[0].value.raw
     let transformedFunction = mdx.sync(rawCode).replace('export default', '')
+    transformedFunction = transformedFunction
+      .split('\n')
+      .map(line => {
+        if (line.includes('import')) {
+          mdxImports.push(line)
+          return null
+        } else {
+          return line
+        }
+      })
+      .filter(Boolean)
+      .join('\n')
     let { ast, code } = babel.transform(
       `const ${funcName} = ${transformedFunction}`,
       {
@@ -32,9 +45,23 @@ function inlineMDX({ references, babel, state }) {
             ),
           ]),
         ],
-        // :its_fine_dog:
+        // :this_is_fine_dog:
         ast.program.body[0].declarations[0].init.body,
       ),
+    )
+  })
+  // Process any imports and add them where `imports` was called from
+  imports.forEach(reference => {
+    let { ast, code } = babel.transform(
+      [`import {MDXTag} from '@mdx-js/tag'`].concat(mdxImports).join('\n'),
+      {
+        ast: true,
+      },
+    )
+    reference.parentPath.replaceWithMultiple(
+      ast.program.body.map(impNode => {
+        return t.importDeclaration(impNode.specifiers, impNode.source)
+      }),
     )
   })
 }
