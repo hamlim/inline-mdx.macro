@@ -1,6 +1,6 @@
 {
   "name": "inline-mdx.macro",
-  "version": "0.2.2-alpha",
+  "version": "0.2.2",
   "main": "inline-mdx.macro.js",
   "keywords": [
     "babel-plugin-macros",
