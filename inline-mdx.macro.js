@@ -1,6 +1,7 @@
 const { createMacro } = require('babel-plugin-macros')
 const mdx = require('@mdx-js/mdx')
-const jsxSyntax = require('babel-plugin-syntax-jsx')
+const envPreset = require('@babel/preset-env')
+const reactPreset = require('@babel/preset-react')
 
 module.exports = createMacro(inlineMDX)
 
@@ -27,7 +28,7 @@ function inlineMDX({ references, babel, state }) {
     let { ast, code } = babel.transform(
       `const ${funcName} = ${transformedFunction}`,
       {
-        plugins: [jsxSyntax],
+        presets: [envPreset, reactPreset],
         ast: true,
       },
     )
