@@ -1,7 +1,7 @@
 const { createMacro } = require('babel-plugin-macros')
 const mdx = require('@mdx-js/mdx')
-const envPreset = require('@babel/preset-env')
-const reactPreset = require('@babel/preset-react')
+const restSpreadSyntax = require('babel-plugin-syntax-object-rest-spread')
+const jsxSyntax = require('babel-plugin-syntax-jsx')
 
 module.exports = createMacro(inlineMDX)
 
@@ -28,13 +28,15 @@ function inlineMDX({ references, babel, state }) {
     let { ast, code } = babel.transform(
       `const ${funcName} = ${transformedFunction}`,
       {
-        presets: [envPreset, reactPreset],
+        plugins: [jsxSyntax, restSpreadSyntax],
         ast: true,
       },
     )
     reference.parentPath.replaceWith(
       t.arrowFunctionExpression(
         [
+          // build out a function argument that looks like
+          // ({ components, ...props })
           t.objectPattern([
             t.objectProperty(
               t.identifier('components'),
@@ -44,10 +46,14 @@ function inlineMDX({ references, babel, state }) {
               // ({ components: components })
               true,
             ),
+            // spread in props
+            t.restElement(t.identifier('props')),
           ]),
         ],
         // :this_is_fine_dog:
-        ast.program.body[0].declarations[0].init.body,
+        // ensure we grab the last function, in case babel
+        // transforms the above code into more than one function
+        ast.program.body[ast.program.body.length - 1].declarations[0].init.body,
       ),
     )
   })
