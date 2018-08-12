@@ -2,7 +2,7 @@
 
 [![Babel Macro](https://img.shields.io/badge/babel--macro-%F0%9F%8E%A3-f5da55.svg?style=flat-square)](https://github.com/kentcdodds/babel-plugin-macros)
 
-[![npm version](https://img.shields.io/badge/npm-0.2.1-brightgreen.svg)](https://github.com/hamlim/inline-mdx.macro)
+[![npm version](https://img.shields.io/badge/npm-0.2.4-brightgreen.svg)](https://github.com/hamlim/inline-mdx.macro)
 
 A babel-macro for converting mdx into an inline component.
 
