@@ -1,6 +1,6 @@
 {
   "name": "inline-mdx.macro",
-  "version": "0.2.1",
+  "version": "0.2.3",
   "main": "inline-mdx.macro.js",
   "keywords": [
     "babel-plugin-macros",
@@ -10,8 +10,10 @@
   "author": "Matthew Hamlin <hamlim@outlook.com> (https://matthamlin.me/)",
   "license": "MIT",
   "dependencies": {
+    "@mdx-js/mdx": "0.15.0-2",
     "babel-plugin-macros": "^2.0.0",
-    "babel-plugin-syntax-jsx": "6.18.0"
+    "babel-plugin-syntax-jsx": "6.18.0",
+    "babel-plugin-syntax-object-rest-spread": "6.13.0"
   },
   "repository": {
     "url": "https://github.com/hamlim/inline-mdx.macro"
