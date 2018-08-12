@@ -10,14 +10,10 @@
   "author": "Matthew Hamlin <hamlim@outlook.com> (https://matthamlin.me/)",
   "license": "MIT",
   "dependencies": {
-    "@babel/plugin-proposal-object-rest-spread": "7.0.0-beta.56",
-    "@babel/preset-env": "7.0.0-beta.56",
-    "@babel/preset-react": "7.0.0-beta.56",
     "@mdx-js/mdx": "0.15.0-2",
     "babel-plugin-macros": "^2.0.0",
     "babel-plugin-syntax-jsx": "6.18.0",
-    "babel-plugin-syntax-object-rest-spread": "6.13.0",
-    "babel-preset-env": "2.0.0-alpha.20"
+    "babel-plugin-syntax-object-rest-spread": "6.13.0"
   },
   "repository": {
     "url": "https://github.com/hamlim/inline-mdx.macro"
