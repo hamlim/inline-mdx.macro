@@ -4,6 +4,7 @@
 
 [![npm version](https://img.shields.io/badge/npm-1.0.0-brightgreen.svg)](https://github.com/hamlim/inline-mdx.macro)
 
+
 A babel-macro for converting mdx into an inline component.
 
 ```js
