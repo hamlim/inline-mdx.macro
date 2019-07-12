@@ -4,7 +4,6 @@
 
 [![npm version](https://img.shields.io/badge/npm-1.0.0-brightgreen.svg)](https://github.com/hamlim/inline-mdx.macro)
 
-
 A babel-macro for converting mdx into an inline component.
 
 ```js
@@ -41,3 +40,10 @@ import { mdx } from '@mdx-js/react'
 ```
 
 This ensures mdx picks up on the jsx code and renders it correctly.
+
+## Changes from v0 to v1:
+
+- Updated to MDX v1
+- Removed the `import` macro
+- Template strings are now formatted first using the
+  [dedent](https://github.com/dmnd/dedent) library

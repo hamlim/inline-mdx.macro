@@ -60,10 +60,9 @@ const object = {
 
       return <MDXLayout {...layoutProps} {...props} components={components} mdxType="MDXLayout">
     <h2>{`This is some MDX source`}</h2>
-  <SomeComponent mdxType="SomeComponent" />
+    <SomeComponent mdxType="SomeComponent" />
 
-    <p>{`  `}<del parentName="p">{`strikethrough`}</del>{`
-`}</p>
+    <p><del parentName="p">{`strikethrough`}</del></p>
     </MDXLayout>;
     }
 

@@ -14,7 +14,8 @@
     "@babel/plugin-proposal-object-rest-spread": "7.5.0",
     "@babel/plugin-syntax-jsx": "7.2.0",
     "@mdx-js/mdx": "1.0.21",
-    "babel-plugin-macros": "2.6.1"
+    "babel-plugin-macros": "2.6.1",
+    "dedent": "0.7.0"
   },
   "repository": {
     "url": "https://github.com/hamlim/inline-mdx.macro"

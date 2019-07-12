@@ -5,6 +5,7 @@ const {
 } = require('@babel/plugin-proposal-object-rest-spread')
 const { default: jsxSyntax } = require('@babel/plugin-syntax-jsx')
 const { parse } = require('@babel/parser')
+const dedent = require('dedent')
 
 module.exports = createMacro(inlineMDX)
 
@@ -30,7 +31,7 @@ function inlineMDX({ references, babel, state }) {
     // Grab the raw mdx code
     let rawCode = reference.parent.quasi.quasis[0].value.raw
     // Transform mdx code
-    let mdxCode = mdx.sync(rawCode)
+    let mdxCode = mdx.sync(dedent(rawCode))
     // collect imports here
     let { code } = babel.transform(mdxCode, {
       plugins: [jsxSyntax, restSpreadSyntax, importVisitor],
