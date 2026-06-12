@@ -20,6 +20,10 @@
   "repository": {
     "url": "https://github.com/hamlim/inline-mdx.macro"
   },
+  "homepage": "https://github.com/hamlim/inline-mdx.macro#readme",
+  "bugs": {
+    "url": "https://github.com/hamlim/inline-mdx.macro/issues"
+  },
   "devDependencies": {
     "@babel/cli": "7.5.0",
     "@babel/core": "7.5.0",
