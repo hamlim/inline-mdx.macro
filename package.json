@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@babel/cli": "7.5.0",
-    "@babel/core": "7.5.0",
+    "@babel/core": "7.29.6",
     "@mdx-js/react": "1.0.21",
     "babel-jest": "24.8.0",
     "babel-plugin-tester": "6.4.0",
