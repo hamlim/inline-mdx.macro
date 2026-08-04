@@ -1,6 +1,9 @@
 {
   "name": "inline-mdx.macro",
   "version": "1.0.0",
+  "bugs": {
+    "url": "https://github.com/hamlim/inline-mdx.macro/issues"
+  },
   "main": "inline-mdx.macro.js",
   "keywords": [
     "babel-plugin-macros",
